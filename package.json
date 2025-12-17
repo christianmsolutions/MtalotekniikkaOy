@@ -1,0 +1,17 @@
+{
+  "name": "gpt-5-real-web-rebuild-v1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "perf": "node scripts/perf.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lighthouse": "^13.0.1",
+    "playwright": "^1.57.0"
+  }
+}

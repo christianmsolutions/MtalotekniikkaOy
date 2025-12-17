@@ -1,0 +1,472 @@
+{
+  "images/etusivu/audience/home-600.jpg": {
+    "type": "image",
+    "theme": "etusivu",
+    "role": "sections",
+    "variant": "home",
+    "target_width": 600,
+    "source": "Koti.png"
+  },
+  "images/etusivu/audience/taloyhtio-600.jpg": {
+    "type": "image",
+    "theme": "etusivu",
+    "role": "sections",
+    "variant": "taloyhtio",
+    "target_width": 600,
+    "source": "Taloyhtio\u0308.png"
+  },
+  "images/etusivu/audience/yritys-600.jpg": {
+    "type": "image",
+    "theme": "etusivu",
+    "role": "sections",
+    "variant": "yritys",
+    "target_width": 600,
+    "source": "Yritys.png"
+  },
+  "images/etusivu/gallery/gallery-1-600.jpg": {
+    "type": "image",
+    "theme": "etusivu",
+    "role": "gallery",
+    "variant": "01",
+    "target_width": 600,
+    "source": "gallery-1-1200.jpg"
+  },
+  "images/etusivu/gallery/gallery-2-600.jpg": {
+    "type": "image",
+    "theme": "etusivu",
+    "role": "gallery",
+    "variant": "02",
+    "target_width": 600,
+    "source": "gallery-2-1200.jpg"
+  },
+  "images/etusivu/gallery/gallery-3-600.jpg": {
+    "type": "image",
+    "theme": "etusivu",
+    "role": "gallery",
+    "variant": "03",
+    "target_width": 600,
+    "source": "gallery-3-1200.jpg"
+  },
+  "images/etusivu/gallery/gallery-4-600.jpg": {
+    "type": "image",
+    "theme": "etusivu",
+    "role": "gallery",
+    "variant": "04",
+    "target_width": 600,
+    "source": "gallery-4-1200.jpg"
+  },
+  "images/etusivu/gallery/gallery-5-600.jpg": {
+    "type": "image",
+    "theme": "etusivu",
+    "role": "gallery",
+    "variant": "05",
+    "target_width": 600,
+    "source": "gallery-5-1200.jpg"
+  },
+  "images/etusivu/gallery/gallery-6-600.jpg": {
+    "type": "image",
+    "theme": "etusivu",
+    "role": "gallery",
+    "variant": "06",
+    "target_width": 600,
+    "source": "gallery-6-1200.jpg"
+  },
+  "images/etusivu/partners/partner-ahlsell.png": {
+    "type": "image",
+    "theme": "etusivu",
+    "role": "logos",
+    "variant": "ahlsell",
+    "target_width": null,
+    "source": "ahlsell.jpeg"
+  },
+  "images/etusivu/partners/partner-etman.png": {
+    "type": "image",
+    "theme": "etusivu",
+    "role": "logos",
+    "variant": "etman",
+    "target_width": null,
+    "source": "etman-logo.png"
+  },
+  "images/etusivu/partners/partner-onninen.png": {
+    "type": "image",
+    "theme": "etusivu",
+    "role": "logos",
+    "variant": "onninen",
+    "target_width": null,
+    "source": "Onninen_logo_2021.png"
+  },
+  "images/etusivu/partners/partner-rexel.png": {
+    "type": "image",
+    "theme": "etusivu",
+    "role": "logos",
+    "variant": "rexel",
+    "target_width": null,
+    "source": "Rexel_corporate_logo.svg.png"
+  },
+  "images/etusivu/partners/partner-sonepar.png": {
+    "type": "image",
+    "theme": "etusivu",
+    "role": "logos",
+    "variant": "sonepar",
+    "target_width": null,
+    "source": "sonepar-logo-color-png.png"
+  },
+  "images/etusivu/trust/trust-local-1200.jpg": {
+    "type": "image",
+    "theme": "etusivu",
+    "role": "sections",
+    "variant": "trust-local",
+    "target_width": 1200,
+    "source": "trust-local-1200.jpg"
+  },
+  "images/etusivu/trust/trust-projects-1200.jpg": {
+    "type": "image",
+    "theme": "etusivu",
+    "role": "sections",
+    "variant": "trust-projects",
+    "target_width": 1200,
+    "source": "trust-projects-1200.jpg"
+  },
+  "images/lvi/hero/hero.jpg": {
+    "type": "hero",
+    "theme": "lvi",
+    "source": "home-hero-bg.jpg",
+    "desktop": "/images/optimized/lvi/hero/lvi-hero-desktop-1800.webp",
+    "mobile": "/images/optimized/lvi/hero/lvi-hero-mobile-900.webp",
+    "desktop_avif": "/images/optimized/lvi/hero/lvi-hero-desktop-1800.avif",
+    "mobile_avif": "/images/optimized/lvi/hero/lvi-hero-mobile-900.avif",
+    "og": "/images/optimized/lvi/hero/lvi-hero-desktop-1800.jpg"
+  },
+  "images/lvi/references/lvi-ref-1-1200.jpg": {
+    "type": "image",
+    "theme": "lvi",
+    "role": "gallery",
+    "variant": "01",
+    "target_width": 1200,
+    "source": "lvi-ref-1-1200.jpg"
+  },
+  "images/lvi/references/lvi-ref-1-600.jpg": {
+    "type": "image",
+    "theme": "lvi",
+    "role": "gallery",
+    "variant": "01",
+    "target_width": 600,
+    "source": "lvi-ref-1-1200.jpg"
+  },
+  "images/lvi/references/lvi-ref-2-1200.jpg": {
+    "type": "image",
+    "theme": "lvi",
+    "role": "gallery",
+    "variant": "02",
+    "target_width": 1200,
+    "source": "lvi-ref-2-1200.jpg"
+  },
+  "images/ostoskori/hero/hero.jpg": {
+    "type": "hero",
+    "theme": "ostoskori",
+    "source": "hero 11.jpg",
+    "desktop": "/images/optimized/ostoskori/hero/ostoskori-hero-desktop-1800.webp",
+    "mobile": "/images/optimized/ostoskori/hero/ostoskori-hero-mobile-900.webp",
+    "desktop_avif": "/images/optimized/ostoskori/hero/ostoskori-hero-desktop-1800.avif",
+    "mobile_avif": "/images/optimized/ostoskori/hero/ostoskori-hero-mobile-900.avif",
+    "og": "/images/optimized/ostoskori/hero/ostoskori-hero-desktop-1800.jpg"
+  },
+  "images/projektit/hero/hero.jpg": {
+    "type": "hero",
+    "theme": "projektit",
+    "source": "trust-projects-1200.jpg",
+    "desktop": "/images/optimized/projektit/hero/projektit-hero-desktop-1800.webp",
+    "mobile": "/images/optimized/projektit/hero/projektit-hero-mobile-900.webp",
+    "desktop_avif": "/images/optimized/projektit/hero/projektit-hero-desktop-1800.avif",
+    "mobile_avif": "/images/optimized/projektit/hero/projektit-hero-mobile-900.avif",
+    "og": "/images/optimized/projektit/hero/projektit-hero-desktop-1800.jpg"
+  },
+  "images/sahkotyot/hero/hero.jpg": {
+    "type": "hero",
+    "theme": "sahkotyot",
+    "source": "hero 10.jpg",
+    "desktop": "/images/optimized/sahkotyot/hero/sahkotyot-hero-desktop-1800.webp",
+    "mobile": "/images/optimized/sahkotyot/hero/sahkotyot-hero-mobile-900.webp",
+    "desktop_avif": "/images/optimized/sahkotyot/hero/sahkotyot-hero-desktop-1800.avif",
+    "mobile_avif": "/images/optimized/sahkotyot/hero/sahkotyot-hero-mobile-900.avif",
+    "og": "/images/optimized/sahkotyot/hero/sahkotyot-hero-desktop-1800.jpg"
+  },
+  "images/sahkotyot/references/sahko-ref-1-1200.jpg": {
+    "type": "image",
+    "theme": "sahkotyot",
+    "role": "gallery",
+    "variant": "01",
+    "target_width": 1200,
+    "source": "sahko-ref-1-1200.jpg"
+  },
+  "images/sahkotyot/references/sahko-ref-2-1200.jpg": {
+    "type": "image",
+    "theme": "sahkotyot",
+    "role": "gallery",
+    "variant": "02",
+    "target_width": 1200,
+    "source": "sahko-ref-2-1200.jpg"
+  },
+  "images/saneeraus/hero/hero.jpg": {
+    "type": "hero",
+    "theme": "saneeraus",
+    "source": "hero 11.jpg",
+    "desktop": "/images/optimized/saneeraus/hero/saneeraus-hero-desktop-1800.webp",
+    "mobile": "/images/optimized/saneeraus/hero/saneeraus-hero-mobile-900.webp",
+    "desktop_avif": "/images/optimized/saneeraus/hero/saneeraus-hero-desktop-1800.avif",
+    "mobile_avif": "/images/optimized/saneeraus/hero/saneeraus-hero-mobile-900.avif",
+    "og": "/images/optimized/saneeraus/hero/saneeraus-hero-desktop-1800.jpg"
+  },
+  "images/tietoa/hero/hero.jpg": {
+    "type": "hero",
+    "theme": "tietoa",
+    "source": "about-team-1200.jpg",
+    "desktop": "/images/optimized/tietoa/hero/tietoa-hero-desktop-1800.webp",
+    "mobile": "/images/optimized/tietoa/hero/tietoa-hero-mobile-900.webp",
+    "desktop_avif": "/images/optimized/tietoa/hero/tietoa-hero-desktop-1800.avif",
+    "mobile_avif": "/images/optimized/tietoa/hero/tietoa-hero-mobile-900.avif",
+    "og": "/images/optimized/tietoa/hero/tietoa-hero-desktop-1800.jpg"
+  },
+  "images/tietoa/team/about-team-600.jpg": {
+    "type": "image",
+    "theme": "tietoa",
+    "role": "sections",
+    "variant": "about-team",
+    "target_width": 600,
+    "source": "about-team-1200.jpg"
+  },
+  "images/ukk/hero/hero.jpg": {
+    "type": "hero",
+    "theme": "ukk",
+    "source": "home-hero-bg.jpg",
+    "desktop": "/images/optimized/ukk/hero/ukk-hero-desktop-1800.webp",
+    "mobile": "/images/optimized/ukk/hero/ukk-hero-mobile-900.webp",
+    "desktop_avif": "/images/optimized/ukk/hero/ukk-hero-desktop-1800.avif",
+    "mobile_avif": "/images/optimized/ukk/hero/ukk-hero-mobile-900.avif",
+    "og": "/images/optimized/ukk/hero/ukk-hero-desktop-1800.jpg"
+  },
+  "images/verkkokauppa/Saneeraus/kylpyhuoneremontin-kartoitus-1200.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "kylpyhuoneremontin-kartoitus",
+    "target_width": 1200,
+    "source": "kylpyhuoneremontin-kartoitus-1200.jpg"
+  },
+  "images/verkkokauppa/hero/hero.jpg": {
+    "type": "hero",
+    "theme": "verkkokauppa",
+    "source": "trust-247-1200.jpg",
+    "desktop": "/images/optimized/verkkokauppa/hero/verkkokauppa-hero-desktop-1800.webp",
+    "mobile": "/images/optimized/verkkokauppa/hero/verkkokauppa-hero-mobile-900.webp",
+    "desktop_avif": "/images/optimized/verkkokauppa/hero/verkkokauppa-hero-desktop-1800.avif",
+    "mobile_avif": "/images/optimized/verkkokauppa/hero/verkkokauppa-hero-mobile-900.avif",
+    "og": "/images/optimized/verkkokauppa/hero/verkkokauppa-hero-desktop-1800.jpg"
+  },
+  "images/verkkokauppa/lvi/iv-suodatinpaketti-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "iv-suodatinpaketti",
+    "target_width": 600,
+    "source": "iv-suodatinpaketti-1200.jpg"
+  },
+  "images/verkkokauppa/lvi/keittiohanan-vaihto-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "keittiohanan-vaihto",
+    "target_width": 600,
+    "source": "keittiohanan-vaihto-1200.jpg"
+  },
+  "images/verkkokauppa/lvi/lampopumpun-vuosihuolto-1200.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "lampopumpun-vuosihuolto",
+    "target_width": 1200,
+    "source": "lampopumpun-vuosihuolto-1200.jpg"
+  },
+  "images/verkkokauppa/lvi/lampopumpun-vuosihuolto-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "lampopumpun-vuosihuolto",
+    "target_width": 600,
+    "source": "lampopumpun-vuosihuolto-1200.jpg"
+  },
+  "images/verkkokauppa/lvi/lattialammityksen-tasapainotus-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "lattialammityksen-tasapainotus",
+    "target_width": 600,
+    "source": "lattialammityksen-tasapainotus-1200.jpg"
+  },
+  "images/verkkokauppa/lvi/lattialammitys-lampokamera-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "lattialammitys-lampokamera",
+    "target_width": 600,
+    "source": "lattialammitys-lampokamera-1200.jpg"
+  },
+  "images/verkkokauppa/lvi/lvi-tuntityo-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "lvi-tuntityo",
+    "target_width": 600,
+    "source": "lvi-tuntityo-1200.jpg"
+  },
+  "images/verkkokauppa/lvi/patteriventtiilien-vaihto-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "patteriventtiilien-vaihto",
+    "target_width": 600,
+    "source": "patteriventtiilien-vaihto-1200.jpg"
+  },
+  "images/verkkokauppa/lvi/vesivuodon-jaljitys-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "vesivuodon-jaljitys",
+    "target_width": 600,
+    "source": "vesivuodon-jaljitys-1200.jpg"
+  },
+  "images/verkkokauppa/lvi/wc-istuimen-vaihto-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "wc-istuimen-vaihto",
+    "target_width": 600,
+    "source": "wc-istuimen-vaihto-1200.jpg"
+  },
+  "images/verkkokauppa/sahko/kaapelointi-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "kaapelointi",
+    "target_width": 600,
+    "source": "kaapelointi-1200.jpg"
+  },
+  "images/verkkokauppa/sahko/keskuksen-huolto-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "keskuksen-huolto",
+    "target_width": 600,
+    "source": "keskuksen-huolto-1200.jpg"
+  },
+  "images/verkkokauppa/sahko/pistorasian-vaihto-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "pistorasian-vaihto",
+    "target_width": 600,
+    "source": "pistorasian-vaihto-1200.jpg"
+  },
+  "images/verkkokauppa/sahko/sahkoauton-latauspiste-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "sahkoauton-latauspiste",
+    "target_width": 600,
+    "source": "sahkoauton-latauspiste-1200.jpg"
+  },
+  "images/verkkokauppa/sahko/tuntityo-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "tuntityo",
+    "target_width": 600,
+    "source": "tuntityo-1200.jpg"
+  },
+  "images/verkkokauppa/sahko/valaisimen-vaihto-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "valaisimen-vaihto",
+    "target_width": 600,
+    "source": "valaisimen-vaihto-1200.jpg"
+  },
+  "images/verkkokauppa/saneeraus/keittioremontin-suunnittelu-paketti-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "keittioremontin-suunnittelu-paketti",
+    "target_width": 600,
+    "source": "keittioremontin-suunnittelu-paketti-1200.jpg"
+  },
+  "images/verkkokauppa/saneeraus/kylpyhuoneremontin-kartoitus-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "kylpyhuoneremontin-kartoitus",
+    "target_width": 600,
+    "source": "kylpyhuoneremontin-kartoitus-1200.jpg"
+  },
+  "images/verkkokauppa/saneeraus/laaja-saneerauskartoitus-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "laaja-saneerauskartoitus",
+    "target_width": 600,
+    "source": "laaja-saneerauskartoitus-1200.jpg"
+  },
+  "images/verkkokauppa/saneeraus/remontti-talotekniikka-kartoitus-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "remontti-talotekniikka-kartoitus",
+    "target_width": 600,
+    "source": "remontti-talotekniikka-kartoitus-1200.jpg"
+  },
+  "images/verkkokauppa/saneeraus/saneeraus-tuntityot-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "saneeraus-tuntityot",
+    "target_width": 600,
+    "source": "saneeraus-tuntityot-1200.jpg"
+  },
+  "images/verkkokauppa/saneeraus/saneerausasiantuntijan-tuntityo-600.jpg": {
+    "type": "image",
+    "theme": "verkkokauppa",
+    "role": "sections",
+    "variant": "saneerausasiantuntijan-tuntityo",
+    "target_width": 600,
+    "source": "saneerausasiantuntijan-tuntityo-1200.jpg"
+  },
+  "images/yhteystiedot/hero/hero.jpg": {
+    "type": "hero",
+    "theme": "yhteystiedot",
+    "source": "trust-local-1200.jpg",
+    "desktop": "/images/optimized/yhteystiedot/hero/yhteystiedot-hero-desktop-1800.webp",
+    "mobile": "/images/optimized/yhteystiedot/hero/yhteystiedot-hero-mobile-900.webp",
+    "desktop_avif": "/images/optimized/yhteystiedot/hero/yhteystiedot-hero-desktop-1800.avif",
+    "mobile_avif": "/images/optimized/yhteystiedot/hero/yhteystiedot-hero-mobile-900.avif",
+    "og": "/images/optimized/yhteystiedot/hero/yhteystiedot-hero-desktop-1800.jpg"
+  },
+  "images/etusivu/hero/hero.jpg": {
+    "type": "hero",
+    "theme": "etusivu",
+    "source": "home-hero.jpg",
+    "desktop": "/images/optimized/etusivu/hero/etusivu-hero-desktop-1800.webp",
+    "mobile": "/images/optimized/etusivu/hero/etusivu-hero-mobile-900.webp",
+    "desktop_avif": "/images/optimized/etusivu/hero/etusivu-hero-desktop-1800.avif",
+    "mobile_avif": "/images/optimized/etusivu/hero/etusivu-hero-mobile-900.avif",
+    "og": "/images/optimized/etusivu/hero/etusivu-hero-desktop-1800.jpg"
+  },
+  "images/ajankohtaista/hero/hero.jpg": {
+    "type": "hero",
+    "theme": "ajankohtaista",
+    "source": "gallery-4-1200.jpg",
+    "desktop": "/images/optimized/ajankohtaista/hero/ajankohtaista-hero-desktop-1800.webp",
+    "mobile": "/images/optimized/ajankohtaista/hero/ajankohtaista-hero-mobile-900.webp",
+    "desktop_avif": "/images/optimized/ajankohtaista/hero/ajankohtaista-hero-desktop-1800.avif",
+    "mobile_avif": "/images/optimized/ajankohtaista/hero/ajankohtaista-hero-mobile-900.avif",
+    "og": "/images/optimized/ajankohtaista/hero/ajankohtaista-hero-desktop-1800.jpg"
+  }
+}

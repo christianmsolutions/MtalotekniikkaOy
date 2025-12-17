@@ -1,0 +1,2 @@
+- lvi-section-demo.html: lisätty canonical (https://mtalotekniikka.fi/lvi-section-demo.html) – puuttui, estetään duplikaatti/indeksointi-ongelma.
+- offline.html: lisätty canonical (https://mtalotekniikka.fi/offline.html) – puuttui, yhtenäinen SEO ja indeksoinnin hallinta.

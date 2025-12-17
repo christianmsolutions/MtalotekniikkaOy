@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verkkokauppa | M Talotekniikka</title>
+  <meta name="description" content="Tilaa sähkö- ja LVI-palvelut sekä tarvikkeet helposti verkosta. Nopea palvelu ja luotettava toimitus Pirkanmaalla.">
+  <link rel="canonical" href="https://mtalotekniikka.fi/verkkokauppa.html">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#0c1a2a">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" as="image" href="images/optimized/verkkokauppa/hero/verkkokauppa-hero-desktop-1800.webp" fetchpriority="high">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>
+    window.SNIPCART_PUBLIC_KEY = 'YTk1OGQ3ODMtNDhmOS00MWE0LTgxMzEtYTUzMWJkYTkwMTJiNjM4OTkwMTQ0MTkxNTkxMDQy';
+  </script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body class="page page--shop">
+  <a class="sr-only" href="#main">Siirry sisältöön</a>
+
+  <header class="header">
+    <div class="container header__bar">
+      <a class="logo" href="">M Talotekniikka</a>
+      <nav class="nav" aria-label="Päänavigaatio">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Valikko</button>
+        <ul class="nav__list" id="main-nav">
+          <li><a class="nav__link" href="index.html">Etusivu</a></li>
+          <li class="nav__item nav__item--has-dropdown">
+            <a href="#" class="nav__link" data-dropdown aria-haspopup="true" aria-expanded="false">Palvelut</a>
+            <div class="nav__dropdown">
+              <div class="heading">LVI</div>
+              <ul>
+                <li><a class="nav__link" href="putkityot.html">Putkityöt</a></li>
+                <li><a class="nav__link" href="ilmastointihuolto.html">Ilmanvaihtotyöt</a></li>
+                <li><a class="nav__link" href="lampopumppu-asennus.html">Lämpöpumput</a></li>
+              </ul>
+              <div class="heading">Sähkö</div>
+              <ul>
+                <li><a class="nav__link" href="sahkotyot.html">Sähkötyöt</a></li>
+                <li><a class="nav__link" href="sahkoautonlataus.html">Sähköauton lataus</a></li>
+                <li><a class="nav__link" href="aurinkopaneelit.html">Aurinkopaneelit</a></li>
+              </ul>
+              <div class="heading">Remontit</div>
+              <ul>
+                <li><a class="nav__link" href="keittioremontti.html">Keittiöremontti</a></li>
+                <li><a class="nav__link" href="kylpyhuoneremontti.html">Kylpyhuoneremontti</a></li>
+                <li><a class="nav__link" href="huoneistoremontti.html">Huoneistoremontti</a></li>
+              </ul>
+            </div>
+          </li>
+          <li><a class="nav__link" href="sahkotyot.html">Vikapalvelu</a></li>
+          <li><a class="nav__link" href="projektit.html">Projektit</a></li>
+          <li><a class="nav__link" href="verkkokauppa.html">Verkkokauppa</a></li>
+          <li><a class="nav__link" href="yhteystiedot.html">Ota yhteyttä</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <button class="btn btn--ghost" type="button" data-search-trigger>Haku</button>
+        <button class="icon-btn snipcart-checkout" type="button" aria-label="Avaa ostoskori">
+          🛒 <span class="cart-count"><span class="snipcart-items-count">0</span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero__media">
+        <!-- TODO: Replace verkkokauppa image with service-themed image from /images/optimized/... -->
+<img src="/images/optimized/verkkokauppa/hero/verkkokauppa-hero-desktop-1800.webp" alt="Verkkokaupan sankarikuva" width="1200" height="685">
+      </div>
+      <div class="hero__overlay">
+        <div class="container">
+          <p class="hero__eyebrow">Verkkokauppa</p>
+          <h1 class="hero__title">Tilaa palvelut ja tarvikkeet verkosta</h1>
+          <p class="hero__lead">Sähkö-, LVI- ja saneeraustuotteet selkeillä hinnoilla. Kassalla käytämme Snipcartia – voit tarkastella ostoskoria millä tahansa sivulla.</p>
+          <div class="button-row">
+            <a class="btn" href="#products">Selaa tuotteita</a>
+            <button class="btn btn--ghost snipcart-checkout" type="button">Avaa ostoskori</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <div class="container">
+        <div class="filter" data-filter-group data-filter-target=".product-card">
+          <button class="is-active" data-filter="kaikki" type="button">Kaikki</button>
+          <button data-filter="sahko" type="button">Sähkö</button>
+          <button data-filter="lvi" type="button">LVI</button>
+          <button data-filter="saneeraus" type="button">Saneeraus</button>
+        </div>
+        <div id="product-grid" class="grid grid--three"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <h3><a class="logo" href="">M Talotekniikka</a></h3>
+        <p>Kokonaisvaltaista talotekniikkaa Pirkanmaalla. Luotettava kumppani sähkö-, LVI- ja saneeraustöissä.</p>
+      </div>
+      <div>
+        <h4>Yhteystiedot</h4>
+        <ul>
+          <li><address>Öljytie 2, 37150 Nokia</address></li>
+          <li><a href="tel:+358400472627">+358 40 047 2627</a></li>
+          <li><a href="mailto:info@mtalotekniikka.fi">info@mtalotekniikka.fi</a></li>
+          <li>Y-tunnus: 3178502-3</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Pikavalikko</h4>
+        <ul>
+          <li><a href="tietoa.html">Tietoa meistä</a></li>
+          <li><a href="projektit.html">Projektit</a></li>
+          <li><a href="ajankohtaista.html">Ajankohtaista</a></li>
+          <li><a href="hinnasto.html">Hinnasto</a></li>
+          <li><a href="ukk.html">UKK</a></li>
+          <li><a href="verkkokauppa.html">Verkkokauppa</a></li>
+          <li><a href="yhteystiedot.html">Ota yhteyttä</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Info</h4>
+        <ul>
+          <li><a href="rekry.html">Töihin meille</a></li>
+          <li><a href="tietosuoja.html">Tietosuojaseloste</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>&copy; <span id="current-year">2025</span> M Talotekniikka. Kaikki oikeudet pidätetään.</p>
+    </div>
+  </footer>
+
+  <div class="cookie-banner">
+    <div class="container">
+      <p>Käytämme evästeitä parantaaksemme käyttökokemustasi ja analysoidaksemme sivuston käyttöä. <a href="tietosuoja.html">Lue tietosuojaseloste</a>.</p>
+      <button class="btn btn--ghost" type="button" data-cookie-accept>Hyväksy</button>
+    </div>
+  </div>
+
+  <a class="back-to-top" href="#main" aria-label="Palaa sivun alkuun">↑</a>
+
+  <script>
+    const PRODUCTS = [
+      { id: "item-101", name: "Sähköasennuksen tuntityö", price: "60.00", net: "47.80", desc: "Asennukset, vikakorjaukset ja käyttöönotot.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-tuntityo-600.webp", category: "sahko" },
+      { id: "item-102", name: "Pistorasian vaihto", price: "89.00", net: "70.92", desc: "Vanhan purku, uuden kytkentä ja testaus.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-pistorasian-vaihto-600.webp", category: "sahko" },
+      { id: "item-103", name: "Valaisimen vaihto", price: "139.00", net: "110.76", desc: "Uuden valaisimen asennus ja käyttötesti.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-valaisimen-vaihto-600.webp", category: "sahko" },
+      { id: "item-104", name: "Kaapelointi (max 20 m)", price: "349.00", net: "278.41", desc: "Kaapelointi ja läpiviennit pientöihin.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-kaapelointi-600.webp", category: "sahko" },
+      { id: "item-107", name: "Sähköauton latauspisteen asennus", price: "1290.00", net: "1027.00", desc: "Kotilataus tai taloyhtiön latauspiste kuormanhallinnalla.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-sahkoauton-latauspiste-600.webp", category: "sahko" },
+      { id: "item-109", name: "Keskuksen huolto / tarkastus", price: "650.00", net: "517.00", desc: "Kiristykset, suojalaitteiden testaus ja mittauspöytäkirja.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-keskuksen-huolto-600.webp", category: "sahko" },
+
+      { id: "item-201", name: "LVI-huollon tuntityö", price: "60.00", net: "47.80", desc: "Putkityöt, vuotokorjaukset ja lämmityksen säädöt.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-lvi-tuntityo-600.webp", category: "lvi" },
+      { id: "item-202", name: "Keittiöhanan vaihto", price: "220.00", net: "175.24", desc: "Uuden perushanan toimitus ja asennus vanhan tilalle.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-keittiohanan-vaihto-600.webp", category: "lvi" },
+      { id: "item-203", name: "WC-istuimen vaihto", price: "450.00", net: "358.02", desc: "Vanhan purku, uuden asennus ja tiiveyden tarkastus.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-wc-istuimen-vaihto-600.webp", category: "lvi" },
+      { id: "item-205", name: "Lattialämmityksen tasapainotus", price: "320.00", net: "254.78", desc: "Lämpöpiirien säätö ja järjestelmän tarkastus.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-lattialammityksen-tasapainotus-600.webp", category: "lvi" },
+      { id: "item-206", name: "Patteriventtiilien vaihto", price: "299.00", net: "238.41", desc: "Sisältää venttiilit, työn ja järjestelmän ilmauksen perusasunnossa.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-patteriventtiilien-vaihto-600.webp", category: "lvi" },
+      { id: "item-207", name: "Vesivuodon jäljitys", price: "129.00", net: "102.78", desc: "Lämpökuvaus ja kosteusmittaukset vuodon paikantamiseen.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-vesivuodon-jaljitys-600.webp", category: "lvi" },
+      { id: "item-208", name: "Lämpöpumpun vuosihuolto", price: "249.00", net: "198.41", desc: "Puhdistus, suodattimet ja toimintojen tarkastus.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-lampopumpun-vuosihuolto-600.webp", category: "lvi" },
+      { id: "item-204", name: "IV-suodatinpaketti", price: "89.90", net: "71.62", desc: "Vaihtosuodattimet yleisiin IV-koneisiin, sisältää toimituksen.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-iv-suodatinpaketti-600.webp", category: "lvi" },
+
+      { id: "item-301", name: "Saneerausasiantuntijan tuntityö", price: "55.00", net: "43.80", desc: "Projektinjohto, kustannuslaskenta ja valvonta.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-saneerausasiantuntijan-tuntityo-600.webp", category: "saneeraus" },
+      { id: "item-302", name: "Kylpyhuoneen kartoitus", price: "149.00", net: "118.65", desc: "Kosteuskartoitus, suunnitelma ja budjetti kylpyhuoneremontille.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-kylpyhuoneremontin-kartoitus-600.webp", category: "saneeraus" },
+      { id: "item-303", name: "Laaja saneerauskartoitus", price: "249.00", net: "198.41", desc: "Tilakartoitus, materiaaliehdotukset ja budjetointi.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-laaja-saneerauskartoitus-600.webp", category: "saneeraus" },
+      { id: "item-304", name: "Liiketilan päivityspaketti", price: "1890.00", net: "1504.00", desc: "Pienemmän myymälän tai toimistotilan pintojen ja sähköjen päivitys.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-remontti-talotekniikka-kartoitus-600.webp", category: "saneeraus" },
+      { id: "item-305", name: "Linjasaneerauksen konsultointi", price: "390.00", net: "310.00", desc: "Aikataulu, budjetti ja urakoitsijasuositukset taloyhtiöille.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-laaja-saneerauskartoitus-600.webp", category: "saneeraus" },
+      { id: "item-306", name: "Keittiöremontin suunnittelupaketti", price: "490.00", net: "390.00", desc: "Tilakartoitus, materiaalit ja budjetointi keittiöremonttiin.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-keittioremontin-suunnittelu-paketti-600.webp", category: "saneeraus" },
+      { id: "item-307", name: "Pienremontin tuntityö", price: "55.00", net: "43.80", desc: "Maalaus-, panelointi- ja kalustetyöt pieniin muutoksiin.", image: "/images/optimized/verkkokauppa/sections/verkkokauppa-sections-saneeraus-tuntityot-600.webp", category: "saneeraus" }
+    ];
+
+    const grid = document.getElementById("product-grid");
+    const categoryLabels = { sahko: "Sähkö", lvi: "LVI", saneeraus: "Saneeraus" };
+
+    PRODUCTS.forEach((product) => {
+      const card = document.createElement("article");
+      card.className = "panel product-card";
+      card.dataset.category = product.category;
+      card.innerHTML = `
+        <picture class="media-figure">
+          <img src="${product.image}" alt="${product.name}">
+        </picture>
+        <div class="pill">${categoryLabels[product.category] || ""}</div>
+        <h3>${product.name}</h3>
+        <p class="muted" style="margin-bottom:0.5rem;">${product.desc}</p>
+        <p><strong>${product.price} €</strong> <span class="muted">(alv 25,5 %)</span><br><small class="muted">alv 0 % ${product.net} €</small></p>
+        <button type="button" class="btn snipcart-add-item"
+          data-item-id="${product.id}"
+          data-item-name="${product.name}"
+          data-item-price="${product.price}"
+          data-item-url="/verkkokauppa.html"
+          data-item-description="${product.desc}">
+          Lisää ostoskoriin
+        </button>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

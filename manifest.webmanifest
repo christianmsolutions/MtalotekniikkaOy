@@ -1,0 +1,37 @@
+{
+  "name": "M Talotekniikka – Sähkö, LVI & Saneeraus",
+  "short_name": "M Talotekniikka",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0C1A2A",
+  "theme_color": "#0C1A2A",
+  "lang": "fi",
+  "description": "Sähkö-, LVI- ja saneerauspalvelut Pirkanmaalla – päivystys 24/7 ja kokonaisurakat saman tiimin voimin.",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Ota yhteyttä",
+      "url": "/yhteystiedot.html",
+      "description": "Pikayhteys päivystykseen ja asiakaspalveluun"
+    },
+    {
+      "name": "Verkkokauppa",
+      "url": "/verkkokauppa.html",
+      "description": "Tilaa palvelut ja tarvikkeet verkosta"
+    }
+  ]
+}

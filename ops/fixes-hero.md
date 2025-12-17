@@ -1,0 +1,2 @@
+Ei muutoksia tehty. Kaikki promptin piiriin kuuluvat palvelusivut (hub + tampere) olivat jo hero-preload/fetchpriority teknisesti kunnossa ops/hero-audit.md mukaan.
+- sahkovikapalvelu-tampere.html: lisätty hero <picture>/<img> (sahkotyot-hero-desktop-1800.webp + mobile srcset), alt, fetchpriority="high", width=1800 height=982, decoding="async" sekä preloadiin imagesrcset/imagesizes. Lähdekuvan mitat otettu olemassa olevasta /images/optimized/sahkotyot/hero/sahkotyot-hero-desktop-1800.webp tiedostosta.

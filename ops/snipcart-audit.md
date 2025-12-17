@@ -1,0 +1,36 @@
+# Snipcart audit
+
+Sivut joissa 'snipcart' esiintyy:
+- ajankohtaista.html
+- aurinkopaneelit.html
+- hinnasto.html
+- huoneistoremontti.html
+- ilmastointihuolto.html
+- index.html
+- keittioremontti.html
+- korjaussaneeraus-tampere.html
+- kylpyhuoneremontti.html
+- lampopumppu-asennus.html
+- lvi-asennus-tampere.html
+- lvi-huolto-tampere.html
+- lvi-tampere.html
+- lvi-vikapalvelu-tampere.html
+- lvi.html
+- maalaus-tampere.html
+- ostoskori.html
+- pintakasittely-tampere.html
+- projektit.html
+- putkityot.html
+- remonttipalvelut-tampere.html
+- sahkoasennukset-tampere.html
+- sahkoautonlataus.html
+- sahkoremontti-tampere.html
+- sahkotyot-tampere.html
+- sahkotyot.html
+- sahkovikapalvelu-tampere.html
+- saneeraus.html
+- tietoa.html
+- tietosuoja.html
+- ukk.html
+- verkkokauppa.html
+- yhteystiedot.html
