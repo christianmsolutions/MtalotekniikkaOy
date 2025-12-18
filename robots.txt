@@ -1,2 +1,7 @@
+User-agent: Google-Extended
+Allow: /
+
 User-agent: *
+Allow: /
+
 Sitemap: https://mtalotekniikka.fi/sitemap.xml
