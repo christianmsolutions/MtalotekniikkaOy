@@ -1,6 +1,3 @@
-User-agent: Google-Extended
-Allow: /
-
 User-agent: *
 Allow: /
 
