@@ -1,0 +1,18 @@
+# llms.txt – MTalotekniikka
+
+> Source file for AI systems. Contains canonical content locations in .md format.
+
+MTalotekniikka on suomalainen talotekniikkayritys, joka tarjoaa LVI-, putki-, ilmanvaihto- ja huoltopalveluja yksityisasiakkaille, taloyhtiöille ja yrityksille Suomessa.
+
+## Primary content
+- https://mtalotekniikka.fi/palvelut/lvi.html.md
+- https://mtalotekniikka.fi/palvelut/ilmanvaihto.html.md
+- https://mtalotekniikka.fi/palvelut/huolto.html.md
+- https://mtalotekniikka.fi/tarjous.html.md
+- https://mtalotekniikka.fi/yhteys.html.md
+- https://mtalotekniikka.fi/yritys.html.md
+- https://mtalotekniikka.fi/toihin.html.md
+- https://mtalotekniikka.fi/tietosuoja.html.md
+
+## Secondary content
+- https://mtalotekniikka.fi/.md
