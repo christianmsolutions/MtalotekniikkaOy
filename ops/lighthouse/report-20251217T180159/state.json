@@ -1,0 +1,272 @@
+{
+  "pages": [
+    "tietoa.html",
+    "sahkoasennukset-tampere.html",
+    "verkkokauppa.html",
+    "ukk.html",
+    "pintakasittely-tampere.html",
+    "index.html",
+    "ilmastointihuolto-tampere.html",
+    "sahkoautonlataus.html",
+    "keittioremontti.html",
+    "hinnasto.html",
+    "putkityot.html",
+    "vikapalvelu-tampere.html",
+    "projektit.html",
+    "kylpyhuoneremontti-tampere.html",
+    "ilmastointihuolto.html",
+    "lvi-vikapalvelu-tampere.html",
+    "huoneistoremontti.html",
+    "aurinkopaneelit.html",
+    "sahkovikapalvelu-tampere.html",
+    "lvi.html",
+    "lvi-tampere.html",
+    "huoneistoremontti-tampere.html",
+    "sahkotyot.html",
+    "tietosuoja.html",
+    "aurinkopaneelit-tampere.html",
+    "putkityot-tampere.html",
+    "sahkotyot-tampere.html",
+    "lvi-huolto-tampere.html",
+    "ostoskori.html",
+    "lampopumppu-asennus-tampere.html",
+    "lampopumppu-asennus.html",
+    "kylpyhuoneremontti.html",
+    "korjaussaneeraus-tampere.html",
+    "sahkoremontti-tampere.html",
+    "lvi-asennus-tampere.html",
+    "yhteystiedot.html",
+    "keittioremontti-tampere.html",
+    "rekry.html",
+    "maalaus-tampere.html",
+    "remonttipalvelut-tampere.html",
+    "sahkoautonlataus-tampere.html",
+    "ajankohtaista.html",
+    "kiitos.html",
+    "saneeraus.html"
+  ],
+  "done": {
+    "tietoa.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "tietoa.report.json"
+    },
+    "sahkoasennukset-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "sahkoasennukset-tampere.report.json"
+    },
+    "verkkokauppa.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "verkkokauppa.report.json"
+    },
+    "ukk.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "ukk.report.json"
+    },
+    "pintakasittely-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "pintakasittely-tampere.report.json"
+    },
+    "index.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "index.report.json"
+    },
+    "ilmastointihuolto-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "ilmastointihuolto-tampere.report.json"
+    },
+    "sahkoautonlataus.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "sahkoautonlataus.report.json"
+    },
+    "keittioremontti.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "keittioremontti.report.json"
+    },
+    "hinnasto.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "hinnasto.report.json"
+    },
+    "putkityot.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "putkityot.report.json"
+    },
+    "vikapalvelu-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "vikapalvelu-tampere.report.json"
+    },
+    "projektit.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "projektit.report.json"
+    },
+    "kylpyhuoneremontti-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "kylpyhuoneremontti-tampere.report.json"
+    },
+    "ilmastointihuolto.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "ilmastointihuolto.report.json"
+    },
+    "lvi-vikapalvelu-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "lvi-vikapalvelu-tampere.report.json"
+    },
+    "huoneistoremontti.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "huoneistoremontti.report.json"
+    },
+    "aurinkopaneelit.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "aurinkopaneelit.report.json"
+    },
+    "sahkovikapalvelu-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "sahkovikapalvelu-tampere.report.json"
+    },
+    "lvi.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "lvi.report.json"
+    },
+    "lvi-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "lvi-tampere.report.json"
+    },
+    "huoneistoremontti-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "huoneistoremontti-tampere.report.json"
+    },
+    "sahkotyot.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "sahkotyot.report.json"
+    },
+    "tietosuoja.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "tietosuoja.report.json"
+    },
+    "aurinkopaneelit-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "aurinkopaneelit-tampere.report.json"
+    },
+    "putkityot-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "putkityot-tampere.report.json"
+    },
+    "sahkotyot-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "sahkotyot-tampere.report.json"
+    },
+    "lvi-huolto-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "lvi-huolto-tampere.report.json"
+    },
+    "ostoskori.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "ostoskori.report.json"
+    },
+    "lampopumppu-asennus-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "lampopumppu-asennus-tampere.report.json"
+    },
+    "lampopumppu-asennus.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "lampopumppu-asennus.report.json"
+    },
+    "kylpyhuoneremontti.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "kylpyhuoneremontti.report.json"
+    },
+    "korjaussaneeraus-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "korjaussaneeraus-tampere.report.json"
+    },
+    "sahkoremontti-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "sahkoremontti-tampere.report.json"
+    },
+    "lvi-asennus-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "lvi-asennus-tampere.report.json"
+    },
+    "yhteystiedot.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "yhteystiedot.report.json"
+    },
+    "keittioremontti-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "keittioremontti-tampere.report.json"
+    },
+    "rekry.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "rekry.report.json"
+    },
+    "maalaus-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "maalaus-tampere.report.json"
+    },
+    "remonttipalvelut-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "remonttipalvelut-tampere.report.json"
+    },
+    "sahkoautonlataus-tampere.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "sahkoautonlataus-tampere.report.json"
+    },
+    "ajankohtaista.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "ajankohtaista.report.json"
+    },
+    "kiitos.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "kiitos.report.json"
+    },
+    "saneeraus.html": {
+      "ok": true,
+      "attempts": 1,
+      "report": "saneeraus.report.json"
+    }
+  },
+  "startedAt": "2025-12-17T18:01:59.743Z",
+  "finishedAt": "2025-12-17T18:10:06.540Z"
+}

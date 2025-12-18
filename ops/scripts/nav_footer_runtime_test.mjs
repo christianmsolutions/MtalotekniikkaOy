@@ -121,7 +121,8 @@ async function run() {
         const vik = await page.$("header a:has-text('Vikapalvelu')");
         if (vik) {
           const href = await vik.getAttribute("href");
-          if (!href || !href.endsWith("sahkotyot.html")) {
+          const ok = href === "/vikapalvelu" || href === "vikapalvelu.html" || href?.endsWith("/vikapalvelu");
+          if (!ok) {
             result.status = "FAIL";
             result.details.push(`Vikapalvelu href not hub (${href || "missing"})`);
           }
