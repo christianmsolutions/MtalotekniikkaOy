@@ -10,7 +10,37 @@ const TARGETS = [
 
 const reportDir = join(process.cwd(), 'reports');
 const observeMs = 20000;
-const device = devices['Pixel 5'];
+const mobileDevice = devices['Pixel 5'];
+
+const profiles = [
+  {
+    name: 'mobile',
+    viewport: { width: 393, height: 851 },
+    userAgent: mobileDevice.userAgent,
+    deviceScaleFactor: mobileDevice.deviceScaleFactor,
+    isMobile: true,
+    throttle: true,
+  },
+  {
+    name: 'desktop-throttled',
+    viewport: { width: 1366, height: 768 },
+    userAgent:
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.90 Safari/537.36',
+    deviceScaleFactor: 1,
+    isMobile: false,
+    throttle: true,
+  },
+  {
+    name: 'desktop-fast',
+    viewport: { width: 1366, height: 768 },
+    userAgent:
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.90 Safari/537.36',
+    deviceScaleFactor: 1,
+    isMobile: false,
+    throttle: false,
+  },
+];
+
 const slow4G = {
   offline: false,
   downloadThroughput: (1.6 * 1024 * 1024) / 8,
@@ -25,6 +55,7 @@ const initScript = `
     mutations: [],
     bannerDetected: false,
     headerHeights: { start: null, after: null },
+    mainTop: { start: null, after: null },
     startTime: performance.now(),
   };
   try { localStorage.clear(); sessionStorage.clear(); } catch(e) {}
@@ -66,6 +97,11 @@ const initScript = `
     if (header) {
       const r = header.getBoundingClientRect();
       window.__clsDiag.headerHeights.start = r.height;
+    }
+    const mainEl = document.querySelector('main');
+    if (mainEl) {
+      const r = mainEl.getBoundingClientRect();
+      window.__clsDiag.mainTop.start = r.top;
     }
   });
 
@@ -109,24 +145,28 @@ const initScript = `
 })();
 `;
 
-const runForUrl = async (url) => {
+const runForUrlProfile = async (url, profile) => {
   const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
   const context = await browser.newContext({
-    ...device,
-    viewport: { width: 393, height: 851 },
+    viewport: profile.viewport,
+    userAgent: profile.userAgent,
+    deviceScaleFactor: profile.deviceScaleFactor,
+    isMobile: profile.isMobile,
     locale: 'fi-FI',
   });
   const page = await context.newPage();
-
   const client = await context.newCDPSession(page);
   await client.send('Network.enable');
   await client.send('Network.setCacheDisabled', { cacheDisabled: true });
-  await client.send('Network.emulateNetworkConditions', slow4G);
-  await client.send('Emulation.setCPUThrottlingRate', { rate: 4 });
+  if (profile.throttle) {
+    await client.send('Network.emulateNetworkConditions', slow4G);
+    await client.send('Emulation.setCPUThrottlingRate', { rate: 4 });
+  } else {
+    await client.send('Emulation.setCPUThrottlingRate', { rate: 1 });
+  }
 
   await context.clearCookies();
   await page.addInitScript(initScript);
-
   await page.goto(url, { waitUntil: 'load', timeout: 60000 });
   await page.waitForTimeout(observeMs);
 
@@ -139,9 +179,20 @@ const runForUrl = async (url) => {
       const r = header.getBoundingClientRect();
       d.headerHeights.after = r.height;
     }
+    const mainEl = document.querySelector('main');
+    if (mainEl) {
+      const r = mainEl.getBoundingClientRect();
+      d.mainTop.after = r.top;
+    }
     const totalCLS = (d.entries || []).reduce((sum, e) => sum + (e.value || 0), 0);
     d.totalCLS = totalCLS;
-    d.entries = (d.entries || []).sort((a, b) => (b.value || 0) - (a.value || 0)).slice(0, 10);
+    d.entries = (d.entries || [])
+      .sort((a, b) => (b.value || 0) - (a.value || 0))
+      .slice(0, 10)
+      .map((e) => ({
+        ...e,
+        sources: (e.sources || []).slice(0, 3),
+      }));
     d.mutations = (d.mutations || []).slice(0, 20);
     return d;
   });
@@ -152,27 +203,32 @@ const runForUrl = async (url) => {
 
 const run = async () => {
   mkdirSync(reportDir, { recursive: true });
-  const results = [];
   for (const url of TARGETS) {
     const host = new URL(url).hostname;
-    const data = await runForUrl(url);
-    results.push({ url, host, data });
-    const outPath = join(reportDir, `cls-diagnose.${host}.json`);
-    writeFileSync(outPath, JSON.stringify(data, null, 2));
-    console.log(`\nCLS diagnose for ${url}`);
-    console.log(` totalCLS: ${data.totalCLS}`);
-    if (data.headerHeights) {
-      console.log(` header height start/after: ${data.headerHeights.start} / ${data.headerHeights.after}`);
-    }
-    if (data.bannerDetected) console.log(' banner detected via mutations');
-    if (data.entries && data.entries.length) {
-      console.log(' top entries:');
-      data.entries.slice(0, 5).forEach((e, i) => {
-        const src = (e.sources && e.sources[0]) || {};
-        console.log(`  ${i + 1}. t=${(e.startTime || 0).toFixed(1)}ms v=${e.value} src=${src.selector || '-'}`);
-      });
-    } else {
-      console.log(' no layout-shift entries captured');
+    for (const profile of profiles) {
+      const data = await runForUrlProfile(url, profile);
+      const outPath = join(reportDir, `cls-diagnose.${host}.${profile.name}.json`);
+      writeFileSync(outPath, JSON.stringify(data, null, 2));
+      console.log(`\nCLS diagnose for ${url} [${profile.name}]`);
+      console.log(` totalCLS: ${data.totalCLS}`);
+      if (data.headerHeights) {
+        console.log(
+          ` header height start/after: ${data.headerHeights.start} / ${data.headerHeights.after}`,
+        );
+      }
+      if (data.mainTop) {
+        console.log(` main.top start/after: ${data.mainTop.start} / ${data.mainTop.after}`);
+      }
+      if (data.bannerDetected) console.log(' banner detected via mutations');
+      if (data.entries && data.entries.length) {
+        console.log(' top entries:');
+        data.entries.slice(0, 5).forEach((e, i) => {
+          const srcs = (e.sources || []).map((s) => s.selector || '-').join(', ');
+          console.log(`  ${i + 1}. t=${(e.startTime || 0).toFixed(1)}ms v=${e.value} src=${srcs}`);
+        });
+      } else {
+        console.log(' no layout-shift entries captured');
+      }
     }
   }
 };

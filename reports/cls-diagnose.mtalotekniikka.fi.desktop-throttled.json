@@ -1,0 +1,15 @@
+{
+  "entries": [],
+  "mutations": [],
+  "bannerDetected": false,
+  "headerHeights": {
+    "start": 359.3125,
+    "after": 73
+  },
+  "mainTop": {
+    "start": null,
+    "after": 73
+  },
+  "startTime": 206,
+  "totalCLS": 0
+}

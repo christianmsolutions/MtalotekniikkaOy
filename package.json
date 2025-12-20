@@ -8,6 +8,7 @@
     "perf": "node scripts/perf.js",
     "verify:analytics": "node scripts/verify-analytics.mjs",
     "perf:home": "node scripts/lighthouse-home.mjs",
+    "perf:home:desktop": "node scripts/lighthouse-home-desktop.mjs",
     "generate:hero": "node scripts/generate-hero-variants.mjs",
     "diagnose:cls": "node scripts/diagnose-cls.mjs",
     "parse:lighthouse:cls": "node scripts/parse-lighthouse-cls.mjs"
