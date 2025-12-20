@@ -5,13 +5,17 @@
   "main": "sw.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "perf": "node scripts/perf.js"
+    "perf": "node scripts/perf.js",
+    "verify:analytics": "node scripts/verify-analytics.mjs",
+    "perf:home": "node scripts/lighthouse-home.mjs",
+    "generate:hero": "node scripts/generate-hero-variants.mjs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "lighthouse": "^13.0.1",
-    "playwright": "^1.57.0"
+    "playwright": "^1.57.0",
+    "sharp": "^0.34.5"
   }
 }
