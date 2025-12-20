@@ -400,6 +400,10 @@ textarea {
   inset: 0;
   z-index: 0;
   opacity: 1;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1800 / 1028;
+  overflow: hidden;
 }
 
 .hero__media img,
