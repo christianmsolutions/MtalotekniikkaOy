@@ -1,18 +1,20 @@
 #!/usr/bin/env node
 import { chromium, devices } from 'playwright';
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const URL = 'https://mtalotekniikka.fi/';
+const TARGETS = [
+  'https://mtalotekniikka.fi/',
+  'https://www.mtalotekniikka.fi/',
+];
+
 const reportDir = join(process.cwd(), 'reports');
-const outPath = join(reportDir, 'cls-diagnose.json');
 const observeMs = 20000;
 const device = devices['Pixel 5'];
-
 const slow4G = {
   offline: false,
-  downloadThroughput: (1.6 * 1024 * 1024) / 8, // ~1.6 Mbps
-  uploadThroughput: (0.75 * 1024 * 1024) / 8, // ~0.75 Mbps
+  downloadThroughput: (1.6 * 1024 * 1024) / 8,
+  uploadThroughput: (0.75 * 1024 * 1024) / 8,
   latency: 150,
 };
 
@@ -59,11 +61,13 @@ const initScript = `
     };
   };
 
-  const header = document.querySelector('header');
-  if (header) {
-    const r = header.getBoundingClientRect();
-    window.__clsDiag.headerHeights.start = r.height;
-  }
+  requestAnimationFrame(() => {
+    const header = document.querySelector('header');
+    if (header) {
+      const r = header.getBoundingClientRect();
+      window.__clsDiag.headerHeights.start = r.height;
+    }
+  });
 
   const clsEntries = [];
   const po = new PerformanceObserver((list) => {
@@ -105,8 +109,7 @@ const initScript = `
 })();
 `;
 
-const run = async () => {
-  mkdirSync(reportDir, { recursive: true });
+const runForUrl = async (url) => {
   const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
   const context = await browser.newContext({
     ...device,
@@ -124,7 +127,7 @@ const run = async () => {
   await context.clearCookies();
   await page.addInitScript(initScript);
 
-  await page.goto(URL, { waitUntil: 'networkidle', timeout: 60000 });
+  await page.goto(url, { waitUntil: 'load', timeout: 60000 });
   await page.waitForTimeout(observeMs);
 
   const data = await page.evaluate(() => {
@@ -138,30 +141,39 @@ const run = async () => {
     }
     const totalCLS = (d.entries || []).reduce((sum, e) => sum + (e.value || 0), 0);
     d.totalCLS = totalCLS;
-    // shrink entries to top 10
     d.entries = (d.entries || []).sort((a, b) => (b.value || 0) - (a.value || 0)).slice(0, 10);
-    // shrink mutations
     d.mutations = (d.mutations || []).slice(0, 20);
     return d;
   });
 
   await browser.close();
-  writeFileSync(outPath, JSON.stringify(data, null, 2));
+  return data;
+};
 
-  console.log('CLS diagnose summary:');
-  console.log(` totalCLS: ${data.totalCLS}`);
-  if (data.headerHeights) {
-    console.log(` header height start/after: ${data.headerHeights.start} / ${data.headerHeights.after}`);
-  }
-  if (data.bannerDetected) console.log(' banner detected via mutations');
-  if (data.entries && data.entries.length) {
-    console.log(' top entries:');
-    data.entries.slice(0, 5).forEach((e, i) => {
-      const src = (e.sources && e.sources[0]) || {};
-      console.log(`  ${i + 1}. t=${(e.startTime || 0).toFixed(1)}ms v=${e.value} src=${src.selector || '-'}`);
-    });
-  } else {
-    console.log(' no layout-shift entries captured');
+const run = async () => {
+  mkdirSync(reportDir, { recursive: true });
+  const results = [];
+  for (const url of TARGETS) {
+    const host = new URL(url).hostname;
+    const data = await runForUrl(url);
+    results.push({ url, host, data });
+    const outPath = join(reportDir, `cls-diagnose.${host}.json`);
+    writeFileSync(outPath, JSON.stringify(data, null, 2));
+    console.log(`\nCLS diagnose for ${url}`);
+    console.log(` totalCLS: ${data.totalCLS}`);
+    if (data.headerHeights) {
+      console.log(` header height start/after: ${data.headerHeights.start} / ${data.headerHeights.after}`);
+    }
+    if (data.bannerDetected) console.log(' banner detected via mutations');
+    if (data.entries && data.entries.length) {
+      console.log(' top entries:');
+      data.entries.slice(0, 5).forEach((e, i) => {
+        const src = (e.sources && e.sources[0]) || {};
+        console.log(`  ${i + 1}. t=${(e.startTime || 0).toFixed(1)}ms v=${e.value} src=${src.selector || '-'}`);
+      });
+    } else {
+      console.log(' no layout-shift entries captured');
+    }
   }
 };
 
