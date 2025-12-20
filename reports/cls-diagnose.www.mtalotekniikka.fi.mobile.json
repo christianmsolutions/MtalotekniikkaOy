@@ -3,13 +3,13 @@
   "mutations": [],
   "bannerDetected": false,
   "headerHeights": {
-    "start": 73,
-    "after": 73
+    "start": 72,
+    "after": 72
   },
   "mainTop": {
-    "start": null,
-    "after": 73
+    "start": 25.59375,
+    "after": 0
   },
-  "startTime": 205.69999998807907,
+  "startTime": 197.59999999403954,
   "totalCLS": 0
 }
