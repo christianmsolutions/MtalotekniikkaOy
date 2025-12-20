@@ -393,6 +393,7 @@ textarea {
   background: #0c1a2a;
   color: #e5e7eb;
   min-height: 70vh;
+  aspect-ratio: 1800 / 1028;
 }
 
 .hero__media {
