@@ -74,10 +74,14 @@
   }
 
   function highlightActiveNav() {
-    const path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    const rawPath = location.pathname.toLowerCase();
+    const path = (rawPath.split("/").pop() || "index.html").toLowerCase();
     qsa(".nav__link").forEach((link) => {
       const href = link.getAttribute("href") || "";
-      if (href.toLowerCase() === path) {
+      const hrefLower = href.toLowerCase();
+      const isHome =
+        hrefLower === "/" && (path === "" || path === "/" || path === "index.html");
+      if (hrefLower === path || isHome) {
         link.setAttribute("aria-current", "page");
       }
     });
