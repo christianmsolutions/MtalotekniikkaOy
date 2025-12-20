@@ -1,11 +1,11 @@
 {
-  "totalCLS": 0,
   "entries": [],
   "mutations": [],
   "bannerDetected": false,
   "headerHeights": {
-    "start": 73,
+    "start": null,
     "after": 73
   },
-  "observedForMs": 5000
+  "startTime": 224.30000001192093,
+  "totalCLS": 0
 }

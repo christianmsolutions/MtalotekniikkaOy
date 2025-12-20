@@ -6,8 +6,104 @@ import { join } from 'node:path';
 const URL = 'https://mtalotekniikka.fi/';
 const reportDir = join(process.cwd(), 'reports');
 const outPath = join(reportDir, 'cls-diagnose.json');
-
+const observeMs = 20000;
 const device = devices['Pixel 5'];
+
+const slow4G = {
+  offline: false,
+  downloadThroughput: (1.6 * 1024 * 1024) / 8, // ~1.6 Mbps
+  uploadThroughput: (0.75 * 1024 * 1024) / 8, // ~0.75 Mbps
+  latency: 150,
+};
+
+const initScript = `
+(() => {
+  window.__clsDiag = {
+    entries: [],
+    mutations: [],
+    bannerDetected: false,
+    headerHeights: { start: null, after: null },
+    startTime: performance.now(),
+  };
+  try { localStorage.clear(); sessionStorage.clear(); } catch(e) {}
+
+  const describeNode = (node) => {
+    if (!node || node.nodeType !== 1) return null;
+    const el = node;
+    const rect = el.getBoundingClientRect();
+    const cs = getComputedStyle(el);
+    const classes = (el.className || '').toString().split(/\\s+/).filter(Boolean).slice(0,3);
+    const selector = [
+      el.tagName.toLowerCase(),
+      el.id ? '#' + el.id : '',
+      classes.length ? '.' + classes.join('.') : ''
+    ].join('');
+    let text = '';
+    if (el.childNodes && el.childNodes.length === 1 && el.textContent) {
+      text = el.textContent.trim().slice(0, 30);
+    }
+    return {
+      selector,
+      text,
+      rect: { x: rect.x, y: rect.y, width: rect.width, height: rect.height },
+      styles: {
+        position: cs.position,
+        display: cs.display,
+        height: cs.height,
+        minHeight: cs.minHeight,
+        paddingTop: cs.paddingTop,
+        paddingBottom: cs.paddingBottom,
+        fontSize: cs.fontSize,
+        lineHeight: cs.lineHeight,
+      },
+    };
+  };
+
+  const header = document.querySelector('header');
+  if (header) {
+    const r = header.getBoundingClientRect();
+    window.__clsDiag.headerHeights.start = r.height;
+  }
+
+  const clsEntries = [];
+  const po = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      if (entry.hadRecentInput) continue;
+      const sources = (entry.sources || []).map((s) => describeNode(s.node)).filter(Boolean).slice(0,3);
+      clsEntries.push({
+        value: entry.value,
+        startTime: entry.startTime,
+        sources,
+      });
+    }
+  });
+  po.observe({ type: 'layout-shift', buffered: true });
+
+  const mo = new MutationObserver((mutationList) => {
+    const now = performance.now();
+    mutationList.forEach((m) => {
+      if (m.type === 'childList') {
+        m.addedNodes.forEach((node) => {
+          if (node.nodeType === 1) {
+            const info = describeNode(node);
+            if (info) {
+              window.__clsDiag.mutations.push({ time: now, type: 'added', node: info });
+              const cls = (info.selector || '').toLowerCase();
+              if (cls.includes('cookie') || cls.includes('consent') || cls.includes('banner')) {
+                window.__clsDiag.bannerDetected = true;
+              }
+            }
+          }
+        });
+      }
+    });
+  });
+  mo.observe(document.documentElement || document.body, { childList: true, subtree: true });
+
+  window.__clsDiag.__po = po;
+  window.__clsDiag.__mo = mo;
+})();
+`;
 
 const run = async () => {
   mkdirSync(reportDir, { recursive: true });
@@ -19,94 +115,35 @@ const run = async () => {
   });
   const page = await context.newPage();
 
-  await page.route('**/*', (route) => {
-    // Simulate Slow 4G-ish throttling by delaying responses slightly (lightweight)
-    setTimeout(() => route.continue(), 200);
+  const client = await context.newCDPSession(page);
+  await client.send('Network.enable');
+  await client.send('Network.setCacheDisabled', { cacheDisabled: true });
+  await client.send('Network.emulateNetworkConditions', slow4G);
+  await client.send('Emulation.setCPUThrottlingRate', { rate: 4 });
+
+  await context.clearCookies();
+  await page.addInitScript(initScript);
+
+  await page.goto(URL, { waitUntil: 'networkidle', timeout: 60000 });
+  await page.waitForTimeout(observeMs);
+
+  const data = await page.evaluate(() => {
+    const d = window.__clsDiag || {};
+    if (d.__po) d.__po.disconnect();
+    if (d.__mo) d.__mo.disconnect();
+    const header = document.querySelector('header');
+    if (header) {
+      const r = header.getBoundingClientRect();
+      d.headerHeights.after = r.height;
+    }
+    const totalCLS = (d.entries || []).reduce((sum, e) => sum + (e.value || 0), 0);
+    d.totalCLS = totalCLS;
+    // shrink entries to top 10
+    d.entries = (d.entries || []).sort((a, b) => (b.value || 0) - (a.value || 0)).slice(0, 10);
+    // shrink mutations
+    d.mutations = (d.mutations || []).slice(0, 20);
+    return d;
   });
-
-  const data = await page.goto(URL, { waitUntil: 'networkidle', timeout: 45000 })
-    .then(() => page.evaluate(() => {
-      return new Promise((resolve) => {
-        const result = {
-          totalCLS: 0,
-          entries: [],
-          mutations: [],
-          bannerDetected: false,
-          headerHeights: { start: null, after: null },
-          observedForMs: 5000,
-        };
-
-        const start = performance.now();
-
-        const describeNode = (node) => {
-          if (!node || node.nodeType !== 1) return null;
-          const el = node;
-          const rect = el.getBoundingClientRect();
-          return {
-            tag: el.tagName.toLowerCase(),
-            id: el.id || null,
-            classes: el.className || null,
-            rect: { x: rect.x, y: rect.y, width: rect.width, height: rect.height },
-          };
-        };
-
-        const header = document.querySelector('header');
-        if (header) {
-          const r = header.getBoundingClientRect();
-          result.headerHeights.start = r.height;
-        }
-
-        const clsEntries = [];
-        const observer = new PerformanceObserver((list) => {
-          for (const entry of list.getEntries()) {
-            if (entry.hadRecentInput) continue;
-            const sources = (entry.sources || []).map((s) => describeNode(s.node)).filter(Boolean);
-            clsEntries.push({
-              value: entry.value,
-              time: entry.startTime,
-              sources,
-            });
-          }
-        });
-        observer.observe({ type: 'layout-shift', buffered: true });
-
-        const mutationObserver = new MutationObserver((mutationList) => {
-          const now = performance.now();
-          if (now - start > result.observedForMs) return;
-          mutationList.forEach((m) => {
-            if (m.type === 'childList') {
-              m.addedNodes.forEach((node) => {
-                if (node.nodeType === 1) {
-                  const el = node;
-                  const info = describeNode(el);
-                  if (info) {
-                    result.mutations.push({ time: now, type: 'added', node: info });
-                    const cls = (info.classes || '').toLowerCase();
-                    if (cls.includes('cookie') || cls.includes('consent') || cls.includes('banner')) {
-                      result.bannerDetected = true;
-                    }
-                  }
-                }
-              });
-            }
-          });
-        });
-        mutationObserver.observe(document.body, { childList: true, subtree: true });
-
-        setTimeout(() => {
-          observer.disconnect();
-          mutationObserver.disconnect();
-          result.totalCLS = clsEntries.reduce((sum, e) => sum + e.value, 0);
-          result.entries = clsEntries.sort((a, b) => b.value - a.value).slice(0, 10);
-          const headerAfter = document.querySelector('header');
-          if (headerAfter) {
-            const r = headerAfter.getBoundingClientRect();
-            result.headerHeights.after = r.height;
-          }
-          resolve(result);
-        }, 5200);
-      });
-    }));
 
   await browser.close();
   writeFileSync(outPath, JSON.stringify(data, null, 2));
@@ -116,14 +153,12 @@ const run = async () => {
   if (data.headerHeights) {
     console.log(` header height start/after: ${data.headerHeights.start} / ${data.headerHeights.after}`);
   }
-  if (data.bannerDetected) {
-    console.log(' banner detected in mutations');
-  }
+  if (data.bannerDetected) console.log(' banner detected via mutations');
   if (data.entries && data.entries.length) {
-    console.log(' top shifting nodes:');
+    console.log(' top entries:');
     data.entries.slice(0, 5).forEach((e, i) => {
       const src = (e.sources && e.sources[0]) || {};
-      console.log(`  ${i + 1}. value=${e.value} tag=${src.tag || '-'} id=${src.id || ''} classes=${src.classes || ''}`);
+      console.log(`  ${i + 1}. t=${(e.startTime || 0).toFixed(1)}ms v=${e.value} src=${src.selector || '-'}`);
     });
   } else {
     console.log(' no layout-shift entries captured');
