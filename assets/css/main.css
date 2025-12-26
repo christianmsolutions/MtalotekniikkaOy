@@ -454,12 +454,19 @@ textarea {
 }
 
 .hero__eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(12, 26, 42, 0.92);
+  color: #fff;
+  border-radius: 999px;
   font-weight: 700;
-  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   font-size: 0.9rem;
   margin-bottom: 0.4rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
  .hero__title,
