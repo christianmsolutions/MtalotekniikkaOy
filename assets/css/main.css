@@ -1271,12 +1271,35 @@ textarea {
   display: flex;
   flex-direction: column;
   height: 100%;
+  gap: 0.75rem;
+}
+
+.service-grid > .panel h3 {
+  line-height: 1.25;
+  min-height: 2.5em;
+  margin: 0;
 }
 
 .service-grid > .panel p {
   flex: 1;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
 
 .service-grid > .panel .button-row {
   margin-top: auto;
+}
+
+@media (max-width: 640px) {
+  .service-grid > .panel .button-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .service-grid > .panel .button-row .btn {
+    width: 100%;
+  }
 }
