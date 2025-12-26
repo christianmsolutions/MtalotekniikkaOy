@@ -5,8 +5,8 @@
   const SEARCH_INDEX = window.siteSearchIndex || [
     { title: "Etusivu", description: "Talotekniikan etusivu ja yhteydenotto.", url: "index.html", tags: ["etusivu", "palvelut"] },
     { title: "Sähkötyöt", description: "Sähköasennukset, huollot ja päivystys.", url: "sahkotyot.html", tags: ["sähkö"] },
-    { title: "LVI-palvelut", description: "Putkityöt, ilmanvaihto ja lämmitysratkaisut.", url: "lvi.html", tags: ["lvi"] },
-    { title: "Korjaussaneeraus", description: "Saneeraus- ja remonttipalvelut Pirkanmaalla.", url: "saneeraus.html", tags: ["saneeraus"] },
+    { title: "LVI-palvelut", description: "Putkityöt, ilmanvaihto ja lämmitysratkaisut.", url: "putkityot.html", tags: ["lvi"] },
+    { title: "Korjaussaneeraus", description: "Saneeraus- ja remonttipalvelut Pirkanmaalla.", url: "kylpyhuoneremontti.html", tags: ["saneeraus"] },
     { title: "Vikapalvelu", description: "24/7 vikapäivystys sähkö- ja LVI-ongelmiin.", url: "vikapalvelu-tampere.html", tags: ["päivystys"] },
     { title: "Verkkokauppa", description: "Tilaa palvelut ja tarvikkeet verkosta.", url: "verkkokauppa.html", tags: ["kauppa"] },
     { title: "Projektit", description: "Referenssit ja projektiesittelyt.", url: "projektit.html", tags: ["projektit"] },
