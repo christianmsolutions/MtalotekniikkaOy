@@ -290,6 +290,11 @@ textarea {
   opacity: 0.9;
 }
 
+.btn--stacked {
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
 .btn:hover {
   background: var(--accent-strong);
   transform: translateY(-1px);
