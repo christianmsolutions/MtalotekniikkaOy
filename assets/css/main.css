@@ -1266,3 +1266,17 @@ textarea {
     transition-duration: 0.01ms !important;
   }
 }
+
+.service-grid > .panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service-grid > .panel p {
+  flex: 1;
+}
+
+.service-grid > .panel .button-row {
+  margin-top: auto;
+}
