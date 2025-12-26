@@ -166,11 +166,12 @@ textarea {
   align-items:center;
   gap:0.35rem;
   padding:0.35rem 0.85rem;
-  background:rgba(12,26,42,0.85);
+  background:rgba(12,26,42,0.92);
   color:#fff;
   border-radius:999px;
-  font-weight:600;
-  letter-spacing:0.03em;
+  font-weight:700;
+  letter-spacing:0.04em;
+  text-shadow:0 2px 8px rgba(0,0,0,.35);
 }
 .hero__eyebrow--tag + .hero__title,
 .hero__eyebrow--tag + .hero__eyebrow{
