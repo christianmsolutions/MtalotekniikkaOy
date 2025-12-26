@@ -1303,3 +1303,21 @@ textarea {
     width: 100%;
   }
 }
+
+html, body {
+  overflow-x: hidden;
+}
+
+.partner-logos {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .partner-logos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
