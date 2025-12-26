@@ -278,6 +278,18 @@ textarea {
   box-shadow: 0 12px 30px rgba(37, 99, 235, 0.2);
 }
 
+.btn__label {
+  display: block;
+}
+
+.btn__sub {
+  display: block;
+  font-size: 0.85em;
+  line-height: 1.2;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
 .btn:hover {
   background: var(--accent-strong);
   transform: translateY(-1px);
