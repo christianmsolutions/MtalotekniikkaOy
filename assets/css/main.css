@@ -777,10 +777,28 @@ textarea {
 }
 
 .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 800;
   color: var(--text);
   font-size: 1.1rem;
   letter-spacing: 0.01em;
+}
+
+.logo__media {
+  display: block;
+  line-height: 0;
+}
+
+.logo__media img {
+  display: block;
+  height: 32px;
+  width: auto;
+}
+
+.footer .logo__media img {
+  height: 36px;
 }
 
 .nav {

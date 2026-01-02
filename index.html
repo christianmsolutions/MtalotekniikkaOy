@@ -29,7 +29,9 @@ img,picture{display:block;max-width:100%;height:auto;}
 .container{width:min(1120px,100%);margin-inline:auto;padding-inline:1rem;}
 .header{position:fixed;top:0;left:0;right:0;z-index:1000;backdrop-filter:blur(8px);background:rgba(255,255,255,.9);border-bottom:1px solid var(--border);height:var(--header-height);overflow:visible;}
 .header__bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:var(--header-height);min-height:var(--header-height);flex-wrap:nowrap;}
-.logo{font-weight:800;color:var(--text);font-size:1.1rem;letter-spacing:.01em;}
+.logo{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;color:var(--text);font-size:1.1rem;letter-spacing:.01em;}
+.logo__media{display:block;line-height:0;}
+.logo__media img{display:block;height:32px;width:auto;}
 .nav{position:relative;}
 .nav__list{list-style:none;padding:0;margin:0;display:flex;align-items:center;gap:1rem;flex-wrap:nowrap;white-space:nowrap;}
 .nav--open .nav__list{display:flex;}
@@ -112,7 +114,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a class="sr-only" href="#main">Siirry sisältöön</a>
 <header class="header" style="height:72px;">
 <div class="container header__bar">
-<a class="logo" href="index.html">M Talotekniikka</a>
+<a class="logo" href="index.html"><picture class="logo__media"><source type="image/webp" srcset="/images/optimized/global/logos/mtalotekniikka-logo-240.webp 240w, /images/optimized/global/logos/mtalotekniikka-logo-480.webp 480w, /images/optimized/global/logos/mtalotekniikka-logo-960.webp 960w" sizes="120px"/><img src="/images/optimized/global/logos/mtalotekniikka-logo-240.png" srcset="/images/optimized/global/logos/mtalotekniikka-logo-240.png 240w, /images/optimized/global/logos/mtalotekniikka-logo-480.png 480w, /images/optimized/global/logos/mtalotekniikka-logo-960.png 960w" sizes="120px" width="240" height="240" alt="M Talotekniikka Oy"/></picture></a>
 <nav aria-label="Päänavigaatio" class="nav">
 <button aria-controls="main-nav" aria-expanded="false" class="nav-toggle">Valikko</button>
 <ul class="nav__list" id="main-nav">
@@ -540,7 +542,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer class="footer">
 <div class="container footer__grid">
 <div>
-<h3><a class="logo" href="index.html">M Talotekniikka</a></h3>
+<h3><a class="logo" href="index.html"><picture class="logo__media"><source type="image/webp" srcset="/images/optimized/global/logos/mtalotekniikka-logo-240.webp 240w, /images/optimized/global/logos/mtalotekniikka-logo-480.webp 480w, /images/optimized/global/logos/mtalotekniikka-logo-960.webp 960w" sizes="120px"/><img src="/images/optimized/global/logos/mtalotekniikka-logo-240.png" srcset="/images/optimized/global/logos/mtalotekniikka-logo-240.png 240w, /images/optimized/global/logos/mtalotekniikka-logo-480.png 480w, /images/optimized/global/logos/mtalotekniikka-logo-960.png 960w" sizes="120px" width="240" height="240" alt="M Talotekniikka Oy"/></picture></a></h3>
 <p>Kokonaisvaltaista talotekniikkaa Pirkanmaalla. Luotettava kumppani sähkö-, LVI- ja saneeraustöissä.</p>
 </div>
 <div>
