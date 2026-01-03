@@ -23,6 +23,8 @@
     initFilters();
     initFaq();
     initCookieBanner();
+    initClickTracking();
+    initLeadConversion();
     initReveal();
     initBeforeAfter();
     initYear();
@@ -204,9 +206,25 @@
     const accept = qs("[data-cookie-accept]");
     if (!banner || !accept) return;
 
+    const updateConsent = (state) => {
+      const granted = state === "granted";
+      const payload = {
+        ad_storage: granted ? "granted" : "denied",
+        analytics_storage: granted ? "granted" : "denied",
+        ad_user_data: granted ? "granted" : "denied",
+        ad_personalization: granted ? "granted" : "denied",
+      };
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(["consent", "update", payload]);
+    };
+
     const showBanner = () => {
       banner.classList.add("is-visible");
     };
+
+    if (localStorage.getItem("mtalotekniikka_cookie")) {
+      updateConsent("granted");
+    }
 
     if (!localStorage.getItem("mtalotekniikka_cookie")) {
       let timeoutId;
@@ -230,7 +248,48 @@
 
     accept.addEventListener("click", () => {
       localStorage.setItem("mtalotekniikka_cookie", "true");
+      updateConsent("granted");
       banner.classList.remove("is-visible");
+    });
+  }
+
+  function initClickTracking() {
+    window.dataLayer = window.dataLayer || [];
+
+    const track = (type, value) => {
+      window.dataLayer.push({
+        event: "contact_click",
+        contact_type: type,
+        contact_value: value,
+      });
+    };
+
+    qsa("a[href^='tel:']").forEach((link) => {
+      link.addEventListener("click", () => {
+        track("tel", link.getAttribute("href").replace("tel:", ""));
+      });
+    });
+
+    qsa("a[href^='mailto:']").forEach((link) => {
+      link.addEventListener("click", () => {
+        track("mailto", link.getAttribute("href").replace("mailto:", ""));
+      });
+    });
+  }
+
+  function initLeadConversion() {
+    const isThanks =
+      location.pathname.endsWith("/kiitos") ||
+      location.pathname.endsWith("/kiitos.html");
+    if (!isThanks) return;
+
+    const params = new URLSearchParams(location.search);
+    if (params.get("src") !== "form") return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "generate_lead",
+      lead_source: "form",
     });
   }
 

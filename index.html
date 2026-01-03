@@ -2,6 +2,18 @@
 
 <html lang="fi">
 <head>
+<!-- Consent Mode (GTM) -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{
+  ad_storage:'denied',
+  analytics_storage:'denied',
+  ad_user_data:'denied',
+  ad_personalization:'denied'
+});
+</script>
+<!-- End Consent Mode (GTM) -->
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -395,7 +407,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="panel">
 <form action="https://api.web3forms.com/submit" class="form" method="POST">
 <input name="access_key" type="hidden" value="e5f42baa-7adc-4683-8973-83de632ee3b1"/>
-<input name="redirect" type="hidden" value="https://mtalotekniikka.fi/kiitos.html"/>
+<input name="redirect" type="hidden" value="https://mtalotekniikka.fi/kiitos.html?src=form"/>
 <input name="from_name" type="hidden" value="M Talotekniikka"/>
 <input name="subject" type="hidden" value="Pikapyyntö verkkosivuilta"/>
 <input autocomplete="off" class="sr-only" name="botcheck" tabindex="-1" type="checkbox"/>
